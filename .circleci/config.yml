@@ -9,12 +9,7 @@ jobs:
       - image: 'circleci/python:3.7.1'
     steps:
       - checkout
-      - run:
-          name: Install dependencies and build project
-          command:
-            - echo "checking python"
       - sonarcloud/scan
-
 
 workflows:
   main:
