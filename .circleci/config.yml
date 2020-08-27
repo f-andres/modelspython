@@ -18,8 +18,15 @@ jobs:
     docker:
       - image: 'circleci/python:3.7.1'
     steps:
+
       - attach_workspace:
           at: /tmp/workspace
+
+      - run
+        name: check_files
+        command: |
+          ls -la
+          pwd
 
 workflows:
   main:
