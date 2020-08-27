@@ -11,7 +11,7 @@ jobs:
       - checkout
 #      - sonarcloud/scan
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: /home/circleci/project
           paths:
             - .
   testing:
@@ -20,7 +20,7 @@ jobs:
     steps:
 
       - attach_workspace:
-          at: /tmp/workspace
+          at: /home/circleci/project
 
       - run:
           name: check_files
