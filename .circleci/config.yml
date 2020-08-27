@@ -17,9 +17,9 @@ jobs:
   testing:
     docker:
       - image: 'circleci/python:3.7.1'
-      steps:
-        - attach_workspace:
-            at: /tmp/workspace
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
 
 workflows:
   main:
