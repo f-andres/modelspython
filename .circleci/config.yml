@@ -9,7 +9,7 @@ jobs:
       - image: 'circleci/python:3.7.1'
     steps:
       - checkout
-      - sonarcloud/scan
+#      - sonarcloud/scan
       - persist_to_workspace:
           root: /tmp/workspace
           paths:
