@@ -22,11 +22,11 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
 
-      - run
-        name: check_files
-        command: |
-          ls -la
-          pwd
+      - run:
+          name: check_files
+          command: |
+            ls -la
+            pwd
 
 workflows:
   main:
