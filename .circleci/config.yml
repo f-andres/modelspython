@@ -12,10 +12,10 @@ jobs:
       - run:
           name: createe_dir
           command: |
-            list = ls
+
             mkdir risk_pd_model
             pwd
-            for i in $list; do
+            for i in $( ls ); do
               mv $i risk_pd_model/
             done
 
