@@ -13,8 +13,8 @@ jobs:
           name: create_dir
           command: |
             ls > list
-            mkdir /home/circleci/risk_pd_model
-            mv /home/circleci/project /home/circleci/risk_pd_model
+           mkdir /home/circleci/risk_pd_model
+            mv * /home/circleci/risk_pd_model
             pwd
 #            for i in $list; do
 #              mv $i risk_pd_model/
