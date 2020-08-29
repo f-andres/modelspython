@@ -9,16 +9,11 @@ jobs:
       - image: 'circleci/python:3.7.1'
     steps:
       - checkout
-      - run: risk_pd_model
-          name: create_dir
+      - run:
+          name: check_files
           command: |
-            ls
-#            mkdir /home/circleci/risk_pd_model
-#            mv * /home/circleci/risk_pd_model
+            ls -la
             pwd
-#            for i in $list; do
-#              mv $i risk_pd_model/
-#            done
 
 #      - sonarcloud/scan
       - persist_to_workspace:
