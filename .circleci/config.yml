@@ -9,10 +9,10 @@ jobs:
       - image: 'circleci/python:3.7.1'
     steps:
       - checkout
-      - run:risk_pd_model
+      - run: risk_pd_model
           name: create_dir
           command: |
-            ls > list
+            ls
 #            mkdir /home/circleci/risk_pd_model
 #            mv * /home/circleci/risk_pd_model
             pwd
