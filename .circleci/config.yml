@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       - image: 'circleci/python:3.7.1'
-      working_directory: ~/risk_pd_model
+    working_directory: ~/risk_pd_model
     steps:
       - checkout
       - run:
