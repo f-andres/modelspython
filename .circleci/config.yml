@@ -19,7 +19,7 @@ jobs:
             mv $i risk_pd_model;
             done
 
-            ls -la
+            ls -la risk_pd_model
 
 #      - sonarcloud/scan
       - persist_to_workspace:
@@ -37,7 +37,7 @@ jobs:
       - run:
           name: check_files
           command: |
-            ls -la
+            ls -la risk_pd_model
             pwd
 
 workflows:
