@@ -12,16 +12,17 @@ jobs:
       - run:
           name: createe_dir
           command: |
-            ls > list.txt
-            mkdir risk_pd_model
+            ls > list
+#            mkdir /home/circleci/risk_pd_model
+            mv   /home/circleci/project /home/circleci/risk_pd_model
             pwd
-            for i in $list.txt; do
-              mv $i risk_pd_model/
-            done
+#            for i in $list; do
+#              mv $i risk_pd_model/
+#            done
 
 #      - sonarcloud/scan
       - persist_to_workspace:
-          root: /home/circleci/project
+          root: /home/circleci/risk_pd_model
           paths:
             - .
   testing:
@@ -30,7 +31,7 @@ jobs:
     steps:
 
       - attach_workspace:
-          at: /home/circleci/project
+          at: /home/circleci/risk_pd_model
 
       - run:
           name: check_files
