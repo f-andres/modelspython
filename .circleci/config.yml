@@ -13,16 +13,9 @@ jobs:
       - run:
           name: check_files
           command: |
-            ls -la
-#            cat $list
-#            pwd
+            pwd
             mkdir risk_pd_model
-#            for i in $list; do
-#            mv $i risk_pd_model;
-#            done
-#
-#            ls -la risk_pd_model
-            mv * risk_pd_model
+            ls -la
 #      - sonarcloud/scan
       - persist_to_workspace:
           root: /home/circleci/project
