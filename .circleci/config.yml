@@ -19,7 +19,7 @@ jobs:
       - persist_to_workspace:
           root: /home/circleci/risk_pd_model
           paths:
-            - risk_pd_model
+            - .
   testing:
     docker:
       - image: 'circleci/python:3.7.1'
