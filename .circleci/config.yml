@@ -7,12 +7,14 @@ jobs:
   build:
     docker:
       - image: 'circleci/python:3.7.1'
+
     steps:
       - checkout
       - run:
           name: check_files
           command: |
             ls > list
+            cat $list
             pwd
             mkdir risk_pd_model
             for i in $list; do
@@ -25,7 +27,7 @@ jobs:
       - persist_to_workspace:
           root: /home/circleci/project
           paths:
-            - .
+            - risk_pd_model
   testing:
     docker:
       - image: 'circleci/python:3.7.1'
