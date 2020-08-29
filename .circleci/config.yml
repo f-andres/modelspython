@@ -16,19 +16,20 @@ jobs:
             pwd
             mkdir /home/circleci/risk_pd_model
             mv * /home/circleci/risk_pd_model
+            ls -la
 
 #      - sonarcloud/scan
       - persist_to_workspace:
-          root: /home/circleci/risk_pd_model
+          root: /home/circleci/project
           paths:
-            - .
+            - /home/circleci/risk_pd_model
   testing:
     docker:
       - image: 'circleci/python:3.7.1'
     steps:
 
       - attach_workspace:
-          at: /home/circleci/risk_pd_model
+          at: /home/circleci/project
 
       - run:
           name: check_files
