@@ -13,9 +13,8 @@ jobs:
       - run:
           name: check_files
           command: |
-            pwd
- #           mkdir risk_pd_model
             ls -la
+            pwd
 #      - sonarcloud/scan
       - persist_to_workspace:
           root: /home/circleci/risk_pd_model
