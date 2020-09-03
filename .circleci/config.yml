@@ -45,3 +45,8 @@ workflows:
       - testing:
           requires:
             - build
+          flters:
+            branches:
+              only:
+                - master
+                - dev
