@@ -14,8 +14,6 @@ jobs:
           name: check_files
           command: |
             ls -la
-            cd risk_pd_model
-            ls
             pwd
 #      - sonarcloud/scan
       - persist_to_workspace:
