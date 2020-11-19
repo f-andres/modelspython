@@ -33,7 +33,6 @@ jobs:
             cd risk_pd_model
             ls -la
             pwd
-
 workflows:
   main:
     jobs:
