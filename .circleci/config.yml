@@ -42,3 +42,9 @@ workflows:
       - testing:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - master
+                - dev
+                - prueba_rama
