@@ -14,7 +14,8 @@ jobs:
           command: |
             ls -la
             pwd
-      - sonarcloud/scan
+            du -hs *
+  #    - sonarcloud/scan
       - persist_to_workspace:
           root: /home/circleci/project
           paths:
@@ -41,3 +42,23 @@ workflows:
       - testing:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - test
+
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+
+      - qa:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - qa
