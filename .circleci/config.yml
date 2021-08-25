@@ -68,20 +68,23 @@ workflows:
       - testing:
           requires:
             - build
-          branches:
-            only:
-              - test
+          filters:
+            branches:
+              only:
+                - test
 
       - deploy:
           requires:
             - build
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
 
       - qa:
           requires:
             - build
-          branches:
-            only:
-              - qa
+          filters:
+            branches:
+              only:
+                - master
