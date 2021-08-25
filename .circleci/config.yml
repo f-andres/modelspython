@@ -34,32 +34,6 @@ jobs:
             cd risk_pd_model
             ls -la
             pwd
-
-  qa:
-    docker:
-      - image: 'circleci/python:3.7.1'
-    steps:
-
-      - attach_workspace:
-          at: /home/circleci/project
-      - run:
-          name: check_files
-          command: |
-            echo "deploy to prod"
-
-
-  deploy:
-    docker:
-      - image: 'circleci/python:3.7.1'
-    steps:
-
-      - attach_workspace:
-          at: /home/circleci/project
-      - run:
-          name: check_files
-          command: |
-            echo "deploy to prod"
-
 workflows:
   main:
     jobs:
