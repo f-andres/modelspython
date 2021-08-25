@@ -35,6 +35,18 @@ jobs:
             ls -la
             pwd
 
+  deploy:
+    docker:
+      - image: 'circleci/python:3.7.1'
+    steps:
+
+      - attach_workspace:
+          at: /home/circleci/project
+      - run:
+          name: check_files
+          command: |
+            echo "deploy to prod"
+
 workflows:
   main:
     jobs:
@@ -43,3 +55,8 @@ workflows:
       - testing:
           requires:
             - build
+
+      - deploy:
+          requires:
+            - testing
+
