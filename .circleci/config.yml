@@ -33,6 +33,22 @@ jobs:
             cd risk_pd_model
             ls -la
             pwd
+
+  Prod:
+    docker:
+      - image: 'circleci/python:3.7.1'
+    steps:
+
+      - attach_workspace:
+          at: /home/circleci/project
+      - run:
+          name: check_files_2
+          command: |
+            ls -la
+            cd risk_pd_model
+            ls -la
+            pwd
+            
 workflows:
   main:
     jobs:
